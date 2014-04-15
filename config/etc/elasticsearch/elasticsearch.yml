@@ -338,6 +338,11 @@ cloud:
   aws:
     region: us-east-1
 
+discovery:
+  type: ec2
+  ec2:
+    groups: @CLUSTER_NAME@
+
 # GCE discovery allows to use Google Compute Engine API in order to perform discovery.
 #
 # You have to install the cloud-gce plugin for enabling the GCE discovery.
