@@ -15,4 +15,4 @@ docker build -t balsamiq:logstash-ec2 .
 
 The container can be run using
 
-docker run -i -t -v /var/log:/var/hostlogs -e CLUSTER_NAME=docker -e LOGSTASH_OPTS=--verbose balsamiq:logstash-ec2
+docker run -i -t -v /var/log:/var/hostlogs -e CLUSTER_NAME=docker -e LOGSTASH_OPTS=--verbose balsamiq/docker-logstash-ec2
