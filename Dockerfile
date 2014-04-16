@@ -17,7 +17,7 @@ RUN apt-get update && apt-get -y install logstash
 
 # Install elasticsearch ec2 plugin jars
 WORKDIR /opt/logstash/vendor/jar/elasticsearch-1.0.1/lib
-RUN wget http://download.elasticsearch.org/elasticsearch/elasticsearch-cloud-aws/elasticsearch-cloud-aws-2.1.0.zip && unzip elasticsearch-cloud-aws-2.1.0.zip && rm elasticsearch-cloud-aws-2.1.0.zip 
+RUN wget http://download.elasticsearch.org/elasticsearch/elasticsearch-cloud-aws/elasticsearch-cloud-aws-2.0.0.zip && unzip elasticsearch-cloud-aws-2.0.0.zip && rm elasticsearch-cloud-aws-2.0.0.zip 
 
 # Install elasticsearch config
 WORKDIR /opt/logstash
@@ -30,4 +30,4 @@ RUN chmod +x run
 
 ADD config/etc /etc
 
-ENTRYPOINT ./run
+CMD ./run
