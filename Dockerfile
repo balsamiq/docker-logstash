@@ -30,4 +30,6 @@ RUN chmod +x run
 
 ADD config/etc /etc
 
+EXPOSE 9200 9300
+
 CMD ./run
