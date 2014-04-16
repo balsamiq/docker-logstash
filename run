@@ -1,6 +1,5 @@
 #!/bin/bash
 sed -i "s/@CLUSTER_NAME@/$CLUSTER_NAME/g" /etc/elasticsearch/elasticsearch.yml
 export LS_HEAP_SIZE=500m
-export JAVA_OPTS=-Djava.io.tmpdir=/var/lib/logstash
-export LS_JAVA_OPTS=-Djava.io.tmpdir=/var/lib/logstash
+export JAVA_OPTS=-Djava.va.io.tmpdir=/var/lib/logstash
 /opt/logstash/bin/logstash agent -f /etc/logstash/conf.d/agent.conf -l /var/hostlogs/logstash/logstash.log $LOGSTASH_OPTS

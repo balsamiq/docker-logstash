@@ -11,8 +11,8 @@ LOGSTASH_OPTS		Any additional logstash options such as --verbose to change the l
 
 The container can be built using
 
-docker build -t balsamiq:logstash-ec2 .
+docker build -t balsamiq/docker-logstash-ec2 .
 
 The container can be run using
 
-docker run -i -t -v /var/log:/var/hostlogs -e CLUSTER_NAME=docker -e LOGSTASH_OPTS=--verbose balsamiq/docker-logstash-ec2
+docker run -i -t -p 9200:9200 -p 9300:9300 -v /var/log:/var/hostlogs -e CLUSTER_NAME=docker -e LOGSTASH_OPTS=--verbose balsamiq/docker-logstash-ec2

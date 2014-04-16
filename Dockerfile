@@ -16,14 +16,11 @@ RUN echo "deb http://packages.elasticsearch.org/logstash/1.4/debian stable main"
 RUN apt-get update && apt-get -y install logstash
 
 # Install elasticsearch ec2 plugin jars
-WORKDIR /opt/logstash/vendor/jar/elasticsearch-1.0.1/lib
+WORKDIR /opt/logstash
 RUN wget http://download.elasticsearch.org/elasticsearch/elasticsearch-cloud-aws/elasticsearch-cloud-aws-2.0.0.zip && unzip elasticsearch-cloud-aws-2.0.0.zip && rm elasticsearch-cloud-aws-2.0.0.zip 
 
 # Install elasticsearch config
-WORKDIR /opt/logstash
-
 RUN ln -s /etc/elasticsearch/elasticsearch.yml
-RUN ln -s /etc/elasticsearch/logging.yml
 
 ADD run /opt/logstash/run
 RUN chmod +x run
