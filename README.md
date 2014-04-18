@@ -12,15 +12,14 @@ The following environment variables can be used to configure the container:
     ES_AWS_REGION       The aws region to be used for discovery, default is "us-east-1".
     LOGSTASH_OPTS       Any additional logstash options such as --verbose to change the logging level to verbose.
 
-The container can be built using
+To build:
 
     docker build -t balsamiq/docker-logstash .
 
-The container can be run as an agent on ec2 using
+To run on ec2:
 
-    docker run -p 9200:9200 -p 9300:9300 -v /var/log:/var/hostlogs -e CLUSTER_NAME=docker -e LOGSTASH_OPTS=--verbose balsamiq/docker-logstash
+    docker run -p 9200:9200 -p 9300:9300 -e ES_DISCOVERY=ec2 -v /var/log:/var/hostlogs balsamiq/docker-logstash
 
-To run the container locally alongside an elasticsearch master node instead of on ec2 you need to set the ES_DISCOVERY env var to something other
-than "ec2", for instance:
+To run locally:
 
-    docker run -v /var/log:/var/hostlogs -e ES_DISCOVERY=multicast balsamiq/docker-logstash
+    docker run -v /var/log:/var/hostlogs balsamiq/docker-logstash
