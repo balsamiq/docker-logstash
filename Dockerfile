@@ -26,6 +26,7 @@ RUN chmod +x run
 ADD config/etc /etc
 
 ENV ES_CLUSTER_NAME elasticsearch
+ENV ES_DISCOVERY ec2
 ENV ES_AWS_REGION us-east-1
 VOLUME ["/var/hostlogs"]
 

@@ -5,10 +5,13 @@ Docker agent with ec2 discovery
 
 The following environment variables can be used to configure the container:
 
-    ES_AWS_REGION				The aws region to be used for discovery, default is "us-east-1".
-    ES_CLUSTER_NAME    	The name of the elasticsearch cluster, default is "elasticsearch".  This is also
-    									  the ec2 group name that is used for discovery.
-    LOGSTASH_OPTS   		Any additional logstash options such as --verbose to change the logging level to verbose.
+    ES_CLUSTER_NAME     The name of the elasticsearch cluster, default is "elasticsearch".  This is also
+                        the ec2 group name that is used for discovery.
+    ES_DISCOVERY        The type of discovery to use with elasticsearch. By default ec2 discovery using ES_AWS_REGION 
+                        and ES_CLUSTER_NAME will be used. Setting to "multicast" enables multicast discovery which
+                        allows for testing locally.
+    ES_AWS_REGION       The aws region to be used for discovery, default is "us-east-1".
+    LOGSTASH_OPTS       Any additional logstash options such as --verbose to change the logging level to verbose.
 
 The container can be built using
 

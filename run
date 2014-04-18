@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if [ "$ES_PORT" != "" ] ; then
-	# This container has been linked to an elasticsearch container, just set the bind_host in logstash conf
-	sed -i "/elasticsearch {/a bind_host => \"$ES_PORT_9200_TCP_ADDR\"" /etc/logstash/conf.d/agent.conf
-else
+if [ "$ES_DISCOVERY" == "ec2" ] ; then
 	# Update logstash eleasticsearch config so it uses ec2 discovery
 	cat >> /etc/elasticsearch/elasticsearch.yml << EOF
 network.publish_host: _ec2_
