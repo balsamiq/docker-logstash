@@ -1,7 +1,7 @@
 docker-logstash-ec2
 ===================
 
-Docker agent with ec2 discovery
+Docker logstash agent with ec2 discovery
 
 The following environment variables can be used to configure the container:
 

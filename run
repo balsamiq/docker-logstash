@@ -1,5 +1,9 @@
 #!/bin/bash
 
+cat >> /etc/elasticsearch/elasticsearch.yml << EOF
+cluster.name: $ES_CLUSTER_NAME
+EOF
+
 if [ "$ES_DISCOVERY" == "ec2" ] ; then
 	# Update logstash eleasticsearch config so it uses ec2 discovery
 	cat >> /etc/elasticsearch/elasticsearch.yml << EOF
