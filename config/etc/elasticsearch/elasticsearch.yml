@@ -29,7 +29,7 @@
 # Cluster name identifies your cluster for auto-discovery. If you're running
 # multiple clusters on the same network, make sure you're using unique names.
 #
-cluster.name: @CLUSTER_NAME@
+# cluster.name: elasticsearch
 
 
 #################################### Node #####################################
@@ -205,7 +205,7 @@ node.data: false
 # Set the address other nodes will use to communicate with this node. If not
 # set, it is automatically derived. It must point to an actual IP address.
 #
-network.publish_host: _ec2_
+# network.publish_host: 192.168.0.1
 
 # Set both 'bind_host' and 'publish_host':
 #
@@ -334,14 +334,6 @@ network.publish_host: _ec2_
 #
 # See <http://elasticsearch.org/tutorials/elasticsearch-on-ec2/>
 # for a step-by-step tutorial.
-cloud:
-  aws:
-    region: us-east-1
-
-discovery:
-  type: ec2
-  ec2:
-    groups: @CLUSTER_NAME@
 
 # GCE discovery allows to use Google Compute Engine API in order to perform discovery.
 #
