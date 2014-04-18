@@ -17,6 +17,11 @@ The container can be built using
 
     docker build -t balsamiq/docker-logstash-ec2 .
 
-The container can be run using
+The container can be run as an agent on ec2 using
 
     docker run -p 9200:9200 -p 9300:9300 -v /var/log:/var/hostlogs -e CLUSTER_NAME=docker -e LOGSTASH_OPTS=--verbose balsamiq/docker-logstash-ec2
+
+To run the container locally alongside an elasticsearch master node instead of on ec2 you need to set the ES_DISCOVERY env var to something other
+than "ec2", for instance:
+
+    docker run -v /var/log:/var/hostlogs -e ES_DISCOVERY=multicast balsamiq/docker-logstash-ec2
