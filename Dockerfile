@@ -1,7 +1,6 @@
-
 # BUILD: docker build -t balsamiq:logstash-ec2 .
 # RUN: docker run -i -t -v /var/log:/var/hostlogs -e CLUSTER_NAME=docker -e LOGSTASH_OPTS=--verbose balsamiq:logstash-ec2
-FROM stackbrew/ubuntu:saucy
+FROM stackbrew/ubuntu:trusty
 MAINTAINER Luis Arias <luis@balsamiq.com>
 
 RUN apt-get update && apt-get -y upgrade
