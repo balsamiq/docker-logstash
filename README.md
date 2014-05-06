@@ -20,8 +20,8 @@ To build:
 
 To run on ec2:
 
-    docker run -p 9200:9200 -p 9300:9300 -e ES_DISCOVERY=ec2 -v /var/log:/var/host/log balsamiq/docker-logstash
+    docker run -p 9200:9200 -p 9300:9300 -e ES_DISCOVERY=ec2 -v /var/log:/host/var/log balsamiq/docker-logstash
 
 To run locally:
 
-    docker run -v /var/log:/var/host/log balsamiq/docker-logstash
+    docker run -v /var/log:/host/var/log balsamiq/docker-logstash

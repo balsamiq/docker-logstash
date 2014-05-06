@@ -1,5 +1,5 @@
 # BUILD: docker build -t balsamiq/docker-logstash .
-# RUN: docker run -i -t -v /var/log:/var/host/log -e CLUSTER_NAME=docker -e LOGSTASH_OPTS=--verbose balsamiq/docker-logstash
+# RUN: docker run -i -t -v /var/log:/host/var/log -e CLUSTER_NAME=docker -e LOGSTASH_OPTS=--verbose balsamiq/docker-logstash
 FROM stackbrew/ubuntu:trusty
 MAINTAINER Luis Arias <luis@balsamiq.com>
 
@@ -26,7 +26,7 @@ ADD config/etc /etc
 
 ENV ES_CLUSTER_NAME elasticsearch
 ENV ES_AWS_REGION us-east-1
-VOLUME ["/var/host/log"]
+VOLUME ["/host/var/log"]
 
 EXPOSE 9200 9300
 

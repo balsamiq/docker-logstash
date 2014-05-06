@@ -21,4 +21,4 @@ EOF
 fi
 export LS_HEAP_SIZE=500m
 export LS_JAVA_OPTS=-Djava.va.io.tmpdir=/var/lib/logstash
-/opt/logstash/bin/logstash agent -f /etc/logstash/conf.d/agent.conf -l /var/host/log/logstash/logstash.log $LOGSTASH_OPTS
+/opt/logstash/bin/logstash agent -f /etc/logstash/conf.d/agent.conf -l /host/var/log/logstash/logstash.log $LOGSTASH_OPTS
