@@ -9,11 +9,11 @@ RUN apt-get -y install wget unzip
 # Install logstash
 RUN wget -O- http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
 RUN echo "deb http://packages.elasticsearch.org/logstash/1.4/debian stable main" > /etc/apt/sources.list.d/logstash.list
-RUN apt-get update && apt-get -y install logstash
+RUN apt-get update && apt-get -y install logstash=1.4.0-1-c82dc09
 
 # Install elasticsearch ec2 plugin jars
 WORKDIR /opt/logstash/vendor
-RUN wget http://download.elasticsearch.org/elasticsearch/elasticsearch-cloud-aws/elasticsearch-cloud-aws-2.0.0.zip && unzip elasticsearch-cloud-aws-2.0.0.zip && rm elasticsearch-cloud-aws-2.0.0.zip 
+RUN wget http://download.elasticsearch.org/elasticsearch/elasticsearch-cloud-aws/elasticsearch-cloud-aws-2.0.0.zip && unzip elasticsearch-cloud-aws-2.0.0.zip && rm elasticsearch-cloud-aws-2.0.0.zip
 
 # Install elasticsearch config
 WORKDIR /opt/logstash
