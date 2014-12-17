@@ -1,6 +1,6 @@
 # BUILD: docker build -t balsamiq/docker-logstash .
 # RUN: docker run -i -t -v /var/log:/host/var/log -e CLUSTER_NAME=docker -e LOGSTASH_OPTS=--verbose balsamiq/docker-logstash
-FROM ubuntu:trusty
+FROM ubuntu:utopic
 MAINTAINER Luis Arias <luis@balsamiq.com>
 
 RUN apt-get update && apt-get -y upgrade
